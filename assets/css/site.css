@@ -174,6 +174,54 @@ img { max-width: 100%; display: block; }
   font-size: 1.25rem;
 }
 
+/* ── Profile photo ── */
+.profile-photo {
+  display: block;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-card);
+}
+
+.profile-photo--hero {
+  width: clamp(220px, 30vw, 300px);
+  height: clamp(240px, 32vw, 320px);
+  object-position: center 15%;
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.12),
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    var(--glow);
+  animation: fadeUp 0.7s 0.15s var(--ease) both;
+}
+
+.profile-photo--about {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.profile-photo--contact {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 300px);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  width: 100%;
+}
+
+.hero__photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 /* ── Hero ── */
 .hero {
   min-height: 100vh;
@@ -646,6 +694,18 @@ html.js .reveal.is-visible {
   max-width: var(--max-w);
 }
 
+.about-page__intro {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.about-page__intro-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .about-page__title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 2.5rem);
@@ -659,7 +719,7 @@ html.js .reveal.is-visible {
   color: var(--text);
   font-size: 1rem;
   line-height: 1.75;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   max-width: 42rem;
 }
 
@@ -831,6 +891,20 @@ html.js .reveal.is-visible {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__photo-wrap {
+    order: -1;
+  }
+
+  .profile-photo--hero {
+    width: min(260px, 70vw);
+    height: min(280px, 75vw);
+    object-position: center 15%;
+  }
+
   .stats { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
@@ -867,4 +941,14 @@ html.js .reveal.is-visible {
 
   .stats { grid-template-columns: 1fr 1fr; }
   .footer__grid { grid-template-columns: 1fr; }
+
+  .about-page__intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-page__bio {
+    max-width: none;
+  }
 }
