@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Naveenkumar Govindaraj</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --bg-nav:    #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --link:      #58a6ff;
+      --link-nav:  #c9d1d9;
+      --h1:        #e6edf3;
+      --input-bg:  #0d1117;
+      --input-border: #30363d;
+      --input-focus: #58a6ff;
+      --btn-bg:    #21262d;
+      --btn-border:#30363d;
+      --btn-text:  #c9d1d9;
+      --btn-hover: #30363d;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      --site-width: 800px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    .site-header {
+      background-color: var(--bg-nav);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .site-header .wrapper {
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 55.95px;
+    }
+
+    .site-title {
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      color: var(--link-nav);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .site-title:hover { color: var(--link); text-decoration: none; }
+
+    .site-nav { display: flex; align-items: center; }
+
+    .site-nav .page-link {
+      color: var(--link-nav);
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: color 0.15s;
+    }
+    .site-nav .page-link:hover { color: var(--link); text-decoration: none; }
+    .site-nav .page-link.active { color: var(--link); }
+
+    /* ── Page ── */
+    .page-content { padding: 30px 0; }
+
+    .wrapper {
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    h1.page-heading {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: -1px;
+      color: var(--h1);
+      margin-bottom: 0.75rem;
+    }
+
+    .post-content p {
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Form — matches Martin's Formspree style ── */
+    .contact-form {
+      margin-top: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background-color: var(--input-bg);
+      color: var(--text);
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-submit {
+      margin-top: 0.5rem;
+    }
+
+    .form-submit button {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: 1px solid var(--btn-border);
+      border-radius: 6px;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .form-submit button:hover {
+      background-color: var(--btn-hover);
+      border-color: #8b949e;
+    }
+
+    /* success / error messages */
+    .form-msg {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      border-radius: 6px;
+    }
+    .form-msg.success {
+      background: rgba(63,185,80,0.1);
+      border: 1px solid rgba(63,185,80,0.3);
+      color: #3fb950;
+    }
+    .form-msg.error {
+      background: rgba(248,81,73,0.1);
+      border: 1px solid rgba(248,81,73,0.3);
+      color: #f85149;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      margin-top: 30px;
+    }
+
+    .footer-col-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+
+    .footer-col { flex: 1; min-width: 160px; }
+
+    .footer-heading {
+      font-size: 1.125rem;
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.25rem; }
+    .footer-col ul li a { color: var(--muted); }
+    .footer-col ul li a:hover { color: var(--link); text-decoration: underline; }
+
+    .footer-copy { font-size: 0.85rem; color: var(--muted); margin-top: 1rem; width: 100%; }
+
+    @media (max-width: 600px) {
+      .site-header .wrapper { padding: 0 15px; }
+      .wrapper { padding: 0 15px; }
+      .site-nav .page-link { padding: 5px 6px; font-size: 0.875rem; }
+      h1.page-heading { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/index.html">Naveenkumar Govindaraj</a>
+    <nav class="site-nav">
+      <a class="page-link" href="/index.html#experience">Industry</a>
+      <a class="page-link" href="/index.html#skills">Skills</a>
+      <a class="page-link" href="/index.html#education">Education</a>
+      <a class="page-link active" href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-content">
+  <div class="wrapper">
+
+    <h1 class="page-heading">Contact</h1>
+
+    <div class="post-content">
+      <p>Want to get in touch with me? Fill out the form below to send me a message.</p>
+
+      <!-- 
+        Formspree: replace YOUR_FORM_ID with your actual Formspree endpoint.
+        Sign up free at https://formspree.io → New Form → copy the form id.
+        Then change action="https://formspree.io/f/YOUR_FORM_ID"
+      -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/xaqkllab"
+        method="POST"
+        id="contactForm"
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit">Send</button>
+        </div>
+
+        <div class="form-msg success" id="successMsg">
+          Thanks! Your message has been sent. I'll get back to you soon.
+        </div>
+        <div class="form-msg error" id="errorMsg">
+          Something went wrong. Please try again later or reach out via LinkedIn.
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <h2 class="footer-heading">Naveenkumar Govindaraj</h2>
+        <ul>
+          <li>Agentic AI Engineer</li>
+          <li>Austin, TX</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contact</h2>
+        <ul>
+          <li><a href="/contact.html">Contact form</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Links</h2>
+        <ul>
+          <li><a href="/linkedin.html">Professional Profile</a></li>
+          <li><a href="https://github.com/NaveenDev-Hub" target="_blank" rel="noopener">Code &amp; Projects</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">// Naveenkumar Govindaraj, 2026</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+  const errorMsg = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+        btn.textContent = 'Sent!';
+      } else {
+        throw new Error('non-ok');
+      }
+    } catch {
+      errorMsg.style.display = 'block';
+      successMsg.style.display = 'none';
+      btn.textContent = 'Send';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

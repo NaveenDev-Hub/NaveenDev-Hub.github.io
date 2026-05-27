@@ -1,1 +1,481 @@
-This page for Naveen.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Naveenkumar Govindaraj</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens — matching krasserm Minima dark theme ── */
+    :root {
+      --bg:        #0d1117;
+      --bg-nav:    #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --link:      #58a6ff;
+      --link-nav:  #c9d1d9;
+      --h1:        #e6edf3;
+      --h2:        #e6edf3;
+      --h3:        #c9d1d9;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --site-width: 800px;
+    }
+
+    /* ── Base ── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Site Header / Nav — exact Minima structure ── */
+    .site-header {
+      background-color: var(--bg-nav);
+      border-bottom: 1px solid var(--border);
+      min-height: 55.95px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .site-header .wrapper {
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 55.95px;
+    }
+
+    .site-title {
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      color: var(--link-nav) !important;
+      text-decoration: none !important;
+      line-height: 55.95px;
+      white-space: nowrap;
+    }
+
+    .site-title:hover { text-decoration: none !important; color: var(--link) !important; }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .site-nav .page-link {
+      color: var(--link-nav);
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: color 0.15s;
+    }
+
+    .site-nav .page-link:hover {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    /* ── Main wrapper ── */
+    .page-content { padding: 30px 0; }
+
+    .wrapper {
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* ── Page heading (h1) ── */
+    h1.page-heading {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 1;
+      color: var(--h1);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Profile block — vertical list exactly like Martin's ── */
+    .profile-links {
+      list-style: disc;
+      padding-left: 1.3rem;
+      margin: 0.9rem 0 0;
+    }
+
+    .profile-links li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .profile-links li::marker { color: var(--muted); }
+
+    .profile-links a { color: var(--link); }
+
+    /* ── Post content typography ── */
+    .post-content { margin-top: 30px; }
+
+    .post-content p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    /* h2 = Job title */
+    .post-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--h2);
+      margin-top: 2.5rem;
+      margin-bottom: 0.15rem;
+      border: none;
+      padding: 0;
+    }
+
+    /* Section headings (Industry Experience, Education) */
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: -1px;
+      color: var(--h1);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Company link line */
+    .company-line {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.05rem;
+    }
+
+    .company-line a { color: var(--link); }
+
+    /* Date / type line */
+    .date-line {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* h3 = Project/role subtitle */
+    .post-content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--h3);
+      margin-top: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Horizontal rule between major sections */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Site Footer — exact Minima ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      margin-top: 30px;
+    }
+
+    .site-footer .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-heading {
+      font-size: 1.125rem;
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .footer-col-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .footer-col { flex: 1; min-width: 160px; }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-col ul li a { color: var(--muted); }
+    .footer-col ul li a:hover { color: var(--link); text-decoration: underline; }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .site-header .wrapper { padding: 0 15px; }
+      .wrapper { padding: 0 15px; }
+      .site-nav .page-link { padding: 5px 6px; font-size: 0.875rem; }
+      h1.page-heading { font-size: 1.5rem; }
+      .section-heading { font-size: 1.5rem; }
+      .post-content h2 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SITE HEADER
+══════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">Naveenkumar Govindaraj</a>
+    <nav class="site-nav">
+      <a class="page-link" href="#experience">Industry</a>
+      <a class="page-link" href="#skills">Skills</a>
+      <a class="page-link" href="#education">Education</a>
+      <a class="page-link" href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PAGE CONTENT
+══════════════════════════════════════════ -->
+<main class="page-content">
+  <div class="wrapper">
+
+    <!-- ── Name & tagline ── -->
+    <h1 class="page-heading">Naveenkumar Govindaraj</h1>
+    <p style="color:var(--muted);margin-top:0.3rem;font-size:0.95rem;">
+      Agentic AI Engineer &nbsp;·&nbsp; AI/ML Automation Architect &nbsp;·&nbsp; SDET Lead
+    </p>
+
+    <!-- ── Profile links — vertical list exactly like Martin's ── -->
+    <ul class="profile-links">
+      <li>Austin, TX</li>
+      <li><a href="/linkedin.html">Professional Profile</a></li>
+      <li><a href="https://github.com/NaveenDev-Hub" target="_blank" rel="noopener">Code &amp; Projects</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+
+    <!-- ── Summary ── -->
+    <div class="post-content">
+      <p style="margin-top:1.5rem;">
+        Results-driven Agentic AI Engineer and SDET with 14+ years of experience designing intelligent, autonomous
+        systems and scalable test automation frameworks. Specialized in building multi-agent orchestration pipelines
+        using LLM-powered tools (OpenAI, AWS Bedrock) and agentic workflows that reduce manual effort and accelerate
+        delivery. Proven track record across banking, finance, automotive, telecom, retail, and e-commerce domains.
+      </p>
+
+      <!-- ══════════════════════════════════════
+           INDUSTRY EXPERIENCE
+      ══════════════════════════════════════ -->
+      <h2 class="section-heading" id="experience">Industry Experience</h2>
+
+      <!-- Job 1 -->
+      <h2>Agentic AI Engineer | Sr. SDET Engineer</h2>
+      <p class="company-line"><a href="#" rel="noopener">Info Services LLC</a></p>
+      <p class="date-line">Feb 2024 – Present &nbsp;|&nbsp; Full-time &nbsp;|&nbsp; Austin, TX</p>
+
+      <h3>Multi-Agent AI Orchestration &amp; Autonomous Test Platform</h3>
+      <p>
+        Architected and deployed multi-agent orchestration pipelines using LangChain and AWS Bedrock Agents,
+        enabling autonomous test case generation and intelligent test execution strategies with minimal human
+        intervention. Engineered RAG-based knowledge retrieval systems integrated into agentic workflows,
+        allowing agents to query internal test repositories and dynamically adapt test plans based on product changes.
+      </p>
+      <p>
+        Implemented an LLM-powered root cause analysis agent (Anthropic Claude) that triages CI/CD failures,
+        classifies defects, and routes issues to appropriate teams — reducing MTTR by ~40%. Designed
+        tool-use / function-calling chains connecting AI agents with live test environments, Jira, and
+        AWS CloudWatch for end-to-end autonomous defect management.
+      </p>
+      <p>
+        Built an asynchronous Cypress-based automation framework using JavaScript/Mocha for UI and API validation;
+        integrated UiPath for RPA automation of repetitive backend workflows. Automated mobile app testing using
+        Appium (Android &amp; iOS) and optimized CI/CD pipelines in Jenkins and GitLab CI for parallelized,
+        automated test execution at scale.
+      </p>
+
+      <!-- Job 2 -->
+      <h2>AI-Assisted SDET Engineer | Sr. Professional</h2>
+      <p class="company-line">
+        <a href="https://www.capgemini.com" target="_blank" rel="noopener">Capgemini</a> / Move Inc.
+      </p>
+      <p class="date-line">Nov 2022 – Jan 2024 &nbsp;|&nbsp; Full-time</p>
+
+      <h3>AI-Augmented Test Automation — Real Estate Platform</h3>
+      <p>
+        Applied AI-assisted test generation using OpenAI APIs to auto-produce Selenium and Cypress test scripts
+        from user stories, cutting test authoring time by 35%. Designed a Selenium WebDriver framework with TestNG
+        and Maven; integrated Cypress for cross-browser validation. Automated REST API testing with Rest Assured
+        (GET, POST, PUT, DELETE); conducted performance testing with JMeter. Managed CI/CD pipelines in Jenkins
+        and collaborated with DevOps on Dockerized deployments.
+      </p>
+
+      <!-- Job 3 -->
+      <h2>SDET Engineer</h2>
+      <p class="company-line">
+        <a href="https://www.capgemini.com" target="_blank" rel="noopener">Capgemini</a> / Harman-Kardon
+      </p>
+      <p class="date-line">Sep 2021 – Nov 2022 &nbsp;|&nbsp; Full-time</p>
+
+      <h3>Embedded &amp; IoT Application Test Automation</h3>
+      <p>
+        Designed end-to-end automation frameworks using Selenium and Cypress for frontend/backend validation of
+        embedded and IoT applications. Implemented test strategies across Linux, QNX, and Android environments;
+        integrated Azure DevOps pipelines. Conducted manual and automated API testing using Postman and
+        REST Assured; provided detailed defect analysis in JIRA.
+      </p>
+
+      <!-- Job 4 -->
+      <h2>Sr. Software Engineer — SDET</h2>
+      <p class="company-line">
+        <a href="https://www.capgemini.com" target="_blank" rel="noopener">Capgemini</a> / JPMorgan Chase &amp; Co.
+      </p>
+      <p class="date-line">Sep 2015 – Sep 2021 &nbsp;|&nbsp; Full-time</p>
+
+      <h3>Large-Scale Banking Application Test Automation</h3>
+      <p>
+        Designed and maintained Java-based Selenium UI automation frameworks supporting large-scale banking
+        application regression suites. Implemented BDD test automation using Cucumber and Gherkin; led UAT
+        with business users for system acceptance. Automated REST API validation using Postman and JMeter;
+        performed SQL database testing on Oracle &amp; PostgreSQL.
+      </p>
+
+      <!-- Job 5 -->
+      <h2>Software Engineer — Test Automation</h2>
+      <p class="company-line">
+        Collabera Technologies / <a href="https://www.qualcomm.com" target="_blank" rel="noopener">Qualcomm</a>
+      </p>
+      <p class="date-line">Oct 2013 – Sep 2015 &nbsp;|&nbsp; Contract</p>
+
+      <h3>Windows Platform &amp; Embedded System Automation</h3>
+      <p>
+        Developed Python-based automation scripts for the Windows platform using PyTest and TAEF; automated
+        embedded system test cases using Robot Framework. Analyzed test logs and system crashes for root cause
+        identification on daily build pipelines.
+      </p>
+
+      <!-- Job 6 -->
+      <h2>Software Engineer — QA</h2>
+      <p class="company-line">
+        Kelly Services / <a href="https://www.zebra.com" target="_blank" rel="noopener">Zebra Technologies</a>
+      </p>
+      <p class="date-line">Mar 2011 – Sep 2013 &nbsp;|&nbsp; Contract</p>
+
+      <h3>WLAN &amp; Bluetooth Connectivity Testing</h3>
+      <p>
+        Conducted WLAN and Bluetooth connectivity testing (802.11 b/g/n, WPA2, Radius servers); performed
+        security, performance, and interoperability testing. Utilized sniffer tools for wireless log validation
+        and root cause analysis.
+      </p>
+
+      <!-- ══════════════════════════════════════
+           SKILLS
+      ══════════════════════════════════════ -->
+      <h2 class="section-heading" id="skills">Technical Skills</h2>
+
+      <p><strong>Agentic AI &amp; Orchestration:</strong> LangChain, LangGraph, AutoGen, CrewAI, OpenAI Assistants API, AWS Bedrock Agents, Prompt Engineering, RAG Pipelines, Tool-Use / Function Calling, Multi-Agent Orchestration</p>
+      <p><strong>AI / ML Platforms:</strong> OpenAI GPT-4, AWS Bedrock (Claude, Titan), Azure OpenAI, Hugging Face</p>
+      <p><strong>Languages:</strong> Python 3.x, Java 8, JavaScript, PowerShell, Shell Scripting</p>
+      <p><strong>Automation Frameworks:</strong> Selenium, Cypress, Appium, PyTest, Robot Framework, Rest Assured, TestNG, JUnit, Cucumber BDD, UiPath (RPA)</p>
+      <p><strong>Cloud Platforms:</strong> AWS (Lambda, Bedrock, EC2, S3, IAM, DynamoDB, CloudWatch), Azure</p>
+      <p><strong>CI/CD &amp; DevOps:</strong> Jenkins, GitHub Actions, GitLab CI, Docker, Kubernetes</p>
+      <p><strong>API &amp; Backend Testing:</strong> Postman, SoapUI, REST, JMeter, HTTP Client</p>
+      <p><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Oracle</p>
+      <p><strong>Bug Tracking &amp; Test Mgmt:</strong> JIRA, Azure DevOps, Confluence, TestRail</p>
+
+      <!-- ══════════════════════════════════════
+           CERTIFICATIONS
+      ══════════════════════════════════════ -->
+      <h2 class="section-heading">Certifications</h2>
+
+      <h2>Microsoft Certified: Azure AI Fundamentals (AI-900)</h2>
+      <p class="company-line"><a href="https://www.microsoft.com" target="_blank" rel="noopener">Microsoft</a></p>
+      <p class="date-line">2024</p>
+
+      <h2>Microsoft Certified: Azure Fundamentals (AZ-900)</h2>
+      <p class="company-line"><a href="https://www.microsoft.com" target="_blank" rel="noopener">Microsoft</a></p>
+      <p class="date-line">2024</p>
+
+      <!-- ══════════════════════════════════════
+           EDUCATION
+      ══════════════════════════════════════ -->
+      <h2 class="section-heading" id="education">Education</h2>
+
+      <h2>Bachelor of Engineering, Electronics &amp; Communication Engineering</h2>
+      <p class="company-line">
+        <a href="https://www.annauniv.edu" target="_blank" rel="noopener">Anna University</a>
+      </p>
+      <p class="date-line">Chennai, India &nbsp;|&nbsp; 2006 – 2010</p>
+
+    </div><!-- /.post-content -->
+  </div><!-- /.wrapper -->
+</main>
+
+<!-- ══════════════════════════════════════════
+     SITE FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <h2 class="footer-heading">Naveenkumar Govindaraj</h2>
+        <ul>
+          <li>Agentic AI Engineer</li>
+          <li>Austin, TX</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Contact</h2>
+        <ul>
+          <li><a href="/contact.html">Contact form</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-heading">Links</h2>
+        <ul>
+          <li><a href="/linkedin.html">Professional Profile</a></li>
+          <li><a href="https://github.com/NaveenDev-Hub" target="_blank" rel="noopener">Code &amp; Projects</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">// Naveenkumar Govindaraj, 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
