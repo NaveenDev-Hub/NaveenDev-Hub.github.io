@@ -679,6 +679,14 @@ html.js .reveal.is-visible {
   padding: 2rem 0;
 }
 
+.footer--simple.shell {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .footer--simple .footer__copy {
   border-top: none;
   padding-top: 1rem;
@@ -691,8 +699,13 @@ html.js .reveal.is-visible {
 
 /* About page (krasserm-style) */
 .about-page {
-  padding: calc(var(--nav-h) + 2.5rem) 0 2rem;
-  max-width: var(--max-w);
+  padding: calc(var(--nav-h) + 2.5rem) 0 3rem;
+  min-height: calc(100vh - var(--nav-h));
+}
+
+.about-page.shell {
+  display: block;
+  width: 100%;
 }
 
 .about-page__intro {
