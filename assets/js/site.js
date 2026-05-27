@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.add('js');
+
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav__toggle');
   const links = document.querySelector('.nav__links');
